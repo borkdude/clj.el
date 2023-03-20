@@ -9,11 +9,10 @@
 
 (defmacro let (bindings &rest body)
   `(let* ,(seq-partition (mapcar #'identity bindings) 2) ,@body))
-
 ;; (let [x 1] x)
+
 (defn inc [x]
   (+ x 1))
-
 ;; (inc 1)
 ;; (map #'inc [1 2 3])
 
