@@ -17,25 +17,25 @@
   `(let* ,(seq-partition (mapcar #'identity bindings) 2) ,@body))
 ;; (let [x 1] x)
 
-(defn clj/inc [x]
+(clj/defn clj/inc [x]
   (+ x 1))
 ;; (inc 1)
 ;; (map #'inc [1 2 3])
 
-(defn clj/first [xs]
+(clj/defn clj/first [xs]
   (car xs))
 
 ;; (first '(1 2 3))
 
-(defn clj/second [xs]
+(clj/defn clj/second [xs]
   (cadr xs))
 ;; (second '(1 2 3))
 
-(defn clj/rest [xs]
+(clj/defn clj/rest [xs]
   (cdr xs))
 ;; (clj/rest '(1 2 3))
 
-(defn clj/= [& xs]
+(clj/defn clj/= [& xs]
   (clj/let [l (length xs)]
            (if (= 1 l) t
              (if (= 2 l) (eq (clj/first xs) (clj/second xs))
