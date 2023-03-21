@@ -1,17 +1,17 @@
 (defun clj/map (f args)
   (mapcar f args))
 
-(defun clj--normalize-arg (arg)
+(defun clj/-normalize-arg (arg)
   (if (eq '& arg)
       '&rest
     arg))
 
 (defmacro clj/fn (args &rest body)
-  `(lambda ,(mapcar #'clj--normalize-arg args) ,@body))
+  `(lambda ,(mapcar #'clj/-normalize-arg args) ,@body))
 ;; (clj/fn [x] x), (clj/fn [x & xs] xs)
 
 (defmacro clj/defn (name args &rest body)
-  `(defun ,name ,(mapcar #'clj--normalize-arg args) ,@body))
+  `(defun ,name ,(mapcar #'clj/-normalize-arg args) ,@body))
 
 (defmacro clj/let (bindings &rest body)
   `(let* ,(seq-partition (mapcar #'identity bindings) 2) ,@body))
