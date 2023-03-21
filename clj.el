@@ -19,17 +19,17 @@
 
 (clj/defn clj/inc [x]
   (+ x 1))
-;; (inc 1)
-;; (map #'inc [1 2 3])
+;; (clj/inc 1)
+;; (clj/map #'inc [1 2 3])
 
 (clj/defn clj/first [xs]
   (car xs))
 
-;; (first '(1 2 3))
+;; (clj/first '(1 2 3))
 
 (clj/defn clj/second [xs]
   (cadr xs))
-;; (second '(1 2 3))
+;; (clj/second '(1 2 3))
 
 (clj/defn clj/rest [xs]
   (cdr xs))
