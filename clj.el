@@ -20,7 +20,7 @@
 (clj/defn clj/inc [x]
   (+ x 1))
 ;; (clj/inc 1)
-;; (clj/map #'inc [1 2 3])
+;; (clj/map #'clj/inc [1 2 3])
 
 (clj/defn clj/first [xs]
   (car xs))
