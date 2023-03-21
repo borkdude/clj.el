@@ -8,7 +8,7 @@
 
 (defmacro clj/fn (args &rest body)
   `(lambda ,(mapcar #'clj--normalize-arg args) ,@body))
-;; (clj/fn [x] x), (fn [x & xs] xs)
+;; (clj/fn [x] x), (clj/fn [x & xs] xs)
 
 (defmacro clj/defn (name args &rest body)
   `(defun ,name ,(mapcar #'clj--normalize-arg args) ,@body))
