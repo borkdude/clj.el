@@ -15,7 +15,7 @@
 
 (defmacro clj/let (bindings &rest body)
   `(let* ,(seq-partition (mapcar #'identity bindings) 2) ,@body))
-;; (let [x 1] x)
+;; (clj/let [x 1] x)
 
 (clj/defn clj/inc [x]
   (+ x 1))
